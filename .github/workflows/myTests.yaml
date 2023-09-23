@@ -46,7 +46,7 @@ jobs:
 
       - name: Play Selenium tests
         run: |
-          mvn test -Dtest=MyTestRunner.CucumberTestRunner -DheadlessMode=true
+          mvn test -P APITEST
 
       - name: Get allure history for history trend
         uses: actions/checkout@v3
