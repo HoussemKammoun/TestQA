@@ -1,11 +1,13 @@
-Feature: Dummy API Test
+@API
+Feature: API Dummy Tests
 
-@smoke
-Scenario Outline: Get all the users
+@userData
+Scenario Outline: As a user I want to check that users data has the right format
 	Given The Endpoint of the API Dummy
 	When I send a request to the get users
 	Then The status code is equal To <code>
-	And I verify the number of employees in the response is <NumberEmplyoees>
+	And the number of employees in the response is <NumberEmplyoees>
+	And the employeeName and the employeeSalary have the good format
 
 Examples:
 	|code| |NumberEmplyoees|  
