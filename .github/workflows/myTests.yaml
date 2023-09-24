@@ -1,5 +1,4 @@
-name: E2E Tests
-
+name: "🐳 API Tests : Execution"
 on:
   workflow_dispatch:
   schedule:
