@@ -3,6 +3,9 @@ package Methods;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 import org.testng.Assert;
 
@@ -12,9 +15,9 @@ public class APIRequestMethods {
     public static Response sendGetRequestToAPI(String endpoint) throws IOException {
         return given()
                 .header("app-id", ConfigReader.GetApiKey())
-                .header("Accept-Language", "fr-FR")
                 .header("Content-Type", "application/json")
-                .get(endpoint);
+                .header("Accept-Language", "fr-FR")
+                .get(ConfigReader.URLGet());
     }
 
     // Method to check the response status code
@@ -22,23 +25,26 @@ public class APIRequestMethods {
         response.then().log().all().statusCode(expectedStatusCode);
     }
 
-    // Method to check the number of employees in the response
-    public static void verifyNumberOfEmployees(Response response, int expectedCount) {
+    // Method to check data are in right format
+    public static void verifyUsersFormat(Response response) {
         JsonPath jsonPath = response.jsonPath();
-        int actualCount = jsonPath.getList("data").size();  
-        Assert.assertEquals(actualCount, expectedCount, "Number of employees does not match the expected count.");
+        List<Map<String, String>> users = jsonPath.getList("data");
+    
+        for (Map<String, String> user : users) {
+            String id = user.get("id");
+            String title = user.get("title");
+            String firstName = user.get("firstName");
+            String lastName = user.get("lastName");
+            String picture = user.get("picture");
+    
+            Assert.assertTrue(id.matches("^[0-9a-z]+$"), "id is not in the right format");
+            Assert.assertTrue(title.equals("mr") || title.equals("ms") || title.equals("mrs") || title.equals("miss"), "Title is not 'mr' or 'mrs': " + title);
+            Assert.assertTrue(firstName.matches("^[a-zA-Z-]+$"), "firstName is not in the right format"); // Check firstName
+            Assert.assertTrue(lastName.matches("^[a-zA-Z]+$"), "lastName is not in the right format");
+            Assert.assertTrue(picture.startsWith("https"), "picture is not in the right format");
+        }
     }
+    
 
-    // Method to check the format of elements in the response
-    public static void verifyFormatElements(Response response) {
-        JsonPath jsonResponseJsonPath = response.jsonPath();
-        String firstName = jsonResponseJsonPath.getString("data[0].employee_name");
-        String employeeSalary = jsonResponseJsonPath.getString("data[0].employee_salary");
-        
-        // verify that the employee name contains only alphabetic characters
-        Assert.assertTrue(firstName.matches("^[A-Za-z -]+$"), "Employee Name contains invalid characters.");
-        
-        // verify that the employee salary contains only numeric characters
-        Assert.assertTrue(employeeSalary.matches("^[0-9]+$"), "Employee Salary contains non-numeric characters.");
-    }
+
 }

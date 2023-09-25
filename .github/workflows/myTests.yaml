@@ -1,4 +1,4 @@
-name: "🐳 API Tests : Execution"
+name: "🐳 ALL Tests : Execution"
 on:
   workflow_dispatch:
   schedule:
@@ -45,7 +45,7 @@ jobs:
 
       - name: Play Selenium tests
         run: |
-          mvn test -P APITEST
+         mvn test -Dtest=Runner.Runner
 
       - name: Get allure history for history trend
         uses: actions/checkout@v3

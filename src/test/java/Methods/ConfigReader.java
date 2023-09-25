@@ -26,7 +26,11 @@ public class ConfigReader {
 		String apikey=getPropertyObject().getProperty("apiKey");
 		return apikey;
 	}
-
+	// Get Title locator
 	
+		public static String GetLocatorTitle() throws IOException {
+		String loc=getPropertyObject().getProperty("Title_Locator");
+		return loc;
+	}
 	
 }

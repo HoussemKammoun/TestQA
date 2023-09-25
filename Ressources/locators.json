@@ -1,0 +1,15 @@
+{
+    "contactPage": {
+      "pageTitle": "//*[@id='contact-form']/h2",
+      "genderDropdown": "gender",
+      "firstNameInput": "first-name",
+      "lastNameInput": "last-name",
+      "companyInput": "company",
+      "phoneInput": "phone",
+      "messageTitleInput": "message-title",
+      "messageTextarea": "message",
+      "submitButton": "submit-button",
+      "messageElement": "popin-message"
+    }
+  }
+  
