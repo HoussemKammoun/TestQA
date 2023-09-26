@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Tue Sep 26 00:26:49 GMT 2023","Tue Sep 26 00:26:49 GMT 2023","25","Surefire suite","Surefire test","Runner.Runner","Runner.Runner","runScenario","Runs Cucumber Scenarios",""
+"broken","Tue Sep 26 00:26:47 GMT 2023","Tue Sep 26 00:26:49 GMT 2023","2367","Surefire suite","Surefire test","Runner.Runner","Runner.Runner","runScenario","Runs Cucumber Scenarios",""
+"broken","Tue Sep 26 00:26:49 GMT 2023","Tue Sep 26 00:26:49 GMT 2023","74","Surefire suite","Surefire test","Runner.Runner","Runner.Runner","runScenario","Runs Cucumber Scenarios",""
