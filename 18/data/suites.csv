@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Tue Sep 26 00:10:02 GMT 2023","Tue Sep 26 00:10:02 GMT 2023","53","Dummy_API-Suite-001","Test-API-001","Runner.Runner","Runner.Runner","runScenario","Runs Cucumber Scenarios",""
+"broken","Tue Sep 26 00:10:02 GMT 2023","Tue Sep 26 00:10:02 GMT 2023","7","Dummy_API-Suite-001","Test-API-001","Runner.Runner","Runner.Runner","runScenario","Runs Cucumber Scenarios",""
+"broken","Tue Sep 26 00:10:00 GMT 2023","Tue Sep 26 00:10:02 GMT 2023","2487","Dummy_API-Suite-001","Test-API-001","Runner.Runner","Runner.Runner","runScenario","Runs Cucumber Scenarios",""
