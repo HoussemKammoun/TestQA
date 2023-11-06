@@ -1,2 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Oct 30 12:14:07 GMT 2023","Mon Oct 30 12:14:10 GMT 2023","3025","Dummy_API-Suite-001","Test-API-001","Runner.Runner","Runner.Runner","runScenario","Runs Cucumber Scenarios",""
